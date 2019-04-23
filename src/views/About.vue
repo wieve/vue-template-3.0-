@@ -5,11 +5,22 @@
 </template>
 
 <script>
-import config from 'config';
+import api from "api";
 
 export default {
   mounted() {
-    console.log("config", config);
+    let appDevice = "Android",
+      appVersion = "6.5.5";
+    api.getHealthReport(appDevice, appVersion).then(res => {
+      console.log("res", res);
+    });
+    let data = {
+      user_name: "admin",
+      password: "adminadmin"
+    };
+    api.postLogin(data).then(res => {
+      console.log("res", res);
+    });
   }
 };
 </script>

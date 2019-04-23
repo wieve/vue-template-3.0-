@@ -8,7 +8,8 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
-      .set("config", resolve("./config"));
+      .set("config", resolve("config/"))
+      .set("api", resolve("src/api/index.js"));
     // 这里只写了两个个，你可以自己再加，按这种格式.set('', resolve(''))
   }
 };
