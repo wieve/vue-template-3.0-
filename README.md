@@ -1,5 +1,7 @@
 # vue-template
 
+English | [简体中文](./README-zh.md)
+
 A Vue.js template based on vue-cli 3.0
 
 ## Project setup

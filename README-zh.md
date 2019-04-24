@@ -1,5 +1,7 @@
 # vue-template
 
+[English](./README.md) | 简体中文
+
 一个基于 vue-cli3.0 的模板
 
 ## 启动项目
