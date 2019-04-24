@@ -3,12 +3,18 @@ import Router from "vue-router";
 import App from "@/App";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
+import Error from "@/Error";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   routes: [
+    {
+      path: "/error",
+      name: "Error",
+      component: Error
+    },
     {
       path: "/",
       name: "App",
@@ -26,3 +32,17 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    from.name
+      ? next({
+          name: from.name
+        })
+      : next("/error");
+  } else {
+    next(); //如果匹配到正确跳转
+  }
+});
+
+export default router;
